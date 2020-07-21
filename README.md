@@ -11,7 +11,7 @@ Clone the project
 2. ```$ npm i```
 3. ```$ npm run start```
 
-#### Runs test
+#### Run tests
 ```$ npm run test```
 
 ### Backend
@@ -19,5 +19,5 @@ Clone the project
 2. ```$ npm i```
 3. ```$ npm run start```
 
-#### Runs test
+#### Run tests
 ```$ npm run test```
