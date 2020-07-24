@@ -1,15 +1,15 @@
 import React from 'react';
 import { Button } from 'antd';
 
-import styles from './BtnCircle.module.scss';
+import styles from './BtnRound.module.scss';
 
 interface Props {
   children?: React.ReactNode;
 }
 
-const BtnCircle = (props: Props) => {
+const BtnRound = (props: Props) => {
   let content = (
-    <Button shape="round" size={'large'}>
+    <Button className={styles.btn} shape="round">
       {props.children}
     </Button>
   );
@@ -17,4 +17,4 @@ const BtnCircle = (props: Props) => {
   return content;
 };
 
-export default BtnCircle;
+export default BtnRound;

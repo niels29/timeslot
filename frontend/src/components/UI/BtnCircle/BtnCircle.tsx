@@ -9,7 +9,7 @@ interface Props {
 
 const BtnCircle = (props: Props) => {
   let content = (
-    <Button shape="circle" size={'large'}>
+    <Button className={styles.btn} shape="circle">
       {props.children}
     </Button>
   );

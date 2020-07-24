@@ -8,7 +8,9 @@ const Search: React.FC = (props: any) => {
   const [value, setValue] = useState('');
   const [options, setOptions] = useState<{ value: string }[]>([]);
   const onSearch = (searchText: string) => {
-    setOptions(!searchText ? [] : [{ value: 'Long Beach' }]);
+    setOptions(
+      !searchText ? [{ value: 'Long Beach' }] : [{ value: 'Long Beach' }]
+    );
   };
   const onSelect = (data: string) => {
     props.history.push('/results/' + data);

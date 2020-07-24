@@ -14,9 +14,9 @@ const CarouselCard = (props: any) => {
       <h1 className={styles.main_heading}>Long Beach </h1>
       <h2 className={styles.sub_heading}>Beach clothing store</h2>
       <BtnRound>View</BtnRound>
-      <BtnCircle>
+      {/* <BtnCircle>
         <PushpinOutlined />
-      </BtnCircle>
+      </BtnCircle> */}
     </div>
   );
 
