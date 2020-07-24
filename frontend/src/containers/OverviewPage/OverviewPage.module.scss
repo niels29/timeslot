@@ -1,0 +1,30 @@
+.card {
+  background-color: green;
+  border-radius: 12px;
+  height: 180px;
+}
+
+.card_one {
+  background-color: #96c5b7;
+}
+.card_two {
+  background-color: #cfe2e8;
+}
+.card_three {
+  background-color: #f3d1d1;
+}
+
+.search {
+  z-index: 1000;
+  position: fixed;
+  top: 56px;
+  left: 0;
+  width: 100%;
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: #f6f6f6;
+}
+
+.card_grid {
+  padding-top: 64px;
+}

@@ -4,3 +4,38 @@
   left: 0;
   width: 100%;
 }
+
+.header {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #f6f6f6;
+  height: 56px;
+  width: 100%;
+  line-height: 56px;
+  padding-left: 16px;
+  padding-right: 16px;
+  .header_icon {
+    color: #313131;
+    font-size: 16px;
+    position: absolute;
+    margin-top: 20px;
+  }
+  .header_text {
+    margin: 0;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    text-align: center;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #444444;
+  }
+}
+
+.content {
+  background: #f6f6f6;
+  padding-left: 16px;
+  padding-right: 16px;
+}

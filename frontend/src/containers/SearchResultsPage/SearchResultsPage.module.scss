@@ -1,0 +1,15 @@
+.search {
+  z-index: 1000;
+  position: fixed;
+  top: 56px;
+  left: 0;
+  width: 100%;
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: #f6f6f6;
+}
+
+.prefix {
+  padding-top: 64px;
+  padding-bottom: 30px;
+}

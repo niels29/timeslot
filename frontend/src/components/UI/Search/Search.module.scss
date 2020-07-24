@@ -1,0 +1,26 @@
+.auto_complete {
+  width: 100%;
+  margin-bottom: 16px;
+  :global(.ant-select-selector) {
+    background-color: #e0e0e0 !important;
+    border-radius: 12px !important;
+    height: 48px !important;
+    border: none !important;
+    border-color: transparent !important;
+    outline: none !important;
+    box-shadow: none !important;
+    :global(.ant-select-selection-search-input) {
+      height: 48px !important;
+    }
+    :global(.ant-select-selection-placeholder) {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: 0.2px;
+      color: #171d33;
+      opacity: 1;
+      line-height: 48px;
+    }
+  }
+}

@@ -11,14 +11,18 @@ import {
 
 import './MobileNavigation.scss';
 
-const MobileNavigation = (props: any) => {
+interface Props {
+  isHomeSelected?: boolean;
+  isNewSelected?: boolean;
+  isBookingsSelected?: boolean;
+  children?: React.ReactNode;
+}
+
+const MobileNavigation = (props: Props) => {
   const content = (
-    <TabBar
-      className={props.styleName}
-      unselectedTintColor="#000"
-      tintColor="#000"
-      barTintColor="white">
+    <TabBar unselectedTintColor="#000" tintColor="#000" barTintColor="white">
       <TabBar.Item
+        selected={props.isHomeSelected}
         title="Home"
         key="Home"
         icon={<HomeOutlined style={{ fontSize: '24px', color: '#000' }} />}
@@ -26,6 +30,7 @@ const MobileNavigation = (props: any) => {
           <HomeFilled style={{ fontSize: '24px', color: '#69D2B3' }} />
         }></TabBar.Item>
       <TabBar.Item
+        selected={props.isNewSelected}
         title="New/Special"
         key="New/Special"
         icon={<FireOutlined style={{ fontSize: '24px', color: '#000' }} />}
@@ -33,6 +38,7 @@ const MobileNavigation = (props: any) => {
           <FireFilled style={{ fontSize: '24px', color: '#69D2B3' }} />
         }></TabBar.Item>
       <TabBar.Item
+        selected={props.isBookingsSelected}
         title="Bookings"
         key="Bookings"
         icon={<CalendarOutlined style={{ fontSize: '24px', color: '#000' }} />}
