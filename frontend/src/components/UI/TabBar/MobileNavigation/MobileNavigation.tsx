@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { TabBar } from 'antd-mobile';
 import {
   HomeOutlined,
@@ -12,17 +12,27 @@ import {
 import './MobileNavigation.scss';
 
 interface Props {
-  isHomeSelected?: boolean;
-  isNewSelected?: boolean;
-  isBookingsSelected?: boolean;
+  onHomeClick: () => void;
+  onNewClick: () => void;
+  onBookingsClick: () => void;
   children?: React.ReactNode;
 }
 
 const MobileNavigation = (props: Props) => {
+  const [isHomeSelected, setIsHomeSelected] = useState(true);
+  const [isNewSelected, setIsNewSelected] = useState(false);
+  const [isBookingsSelected, setIsBookingsSelected] = useState(false);
+
   const content = (
     <TabBar unselectedTintColor="#000" tintColor="#000" barTintColor="white">
       <TabBar.Item
-        selected={props.isHomeSelected}
+        onPress={() => {
+          setIsHomeSelected(true);
+          setIsNewSelected(false);
+          setIsBookingsSelected(false);
+          props.onHomeClick();
+        }}
+        selected={isHomeSelected}
         title="Home"
         key="Home"
         icon={<HomeOutlined style={{ fontSize: '24px', color: '#000' }} />}
@@ -30,7 +40,13 @@ const MobileNavigation = (props: Props) => {
           <HomeFilled style={{ fontSize: '24px', color: '#69D2B3' }} />
         }></TabBar.Item>
       <TabBar.Item
-        selected={props.isNewSelected}
+        onPress={() => {
+          setIsHomeSelected(false);
+          setIsNewSelected(true);
+          setIsBookingsSelected(false);
+          props.onNewClick();
+        }}
+        selected={isNewSelected}
         title="New/Special"
         key="New/Special"
         icon={<FireOutlined style={{ fontSize: '24px', color: '#000' }} />}
@@ -38,7 +54,13 @@ const MobileNavigation = (props: Props) => {
           <FireFilled style={{ fontSize: '24px', color: '#69D2B3' }} />
         }></TabBar.Item>
       <TabBar.Item
-        selected={props.isBookingsSelected}
+        onPress={() => {
+          setIsHomeSelected(false);
+          setIsNewSelected(false);
+          setIsBookingsSelected(true);
+          props.onBookingsClick();
+        }}
+        selected={isBookingsSelected}
         title="Bookings"
         key="Bookings"
         icon={<CalendarOutlined style={{ fontSize: '24px', color: '#000' }} />}

@@ -1,13 +1,14 @@
 import React from 'react';
 import { Layout, Row, Col } from 'antd';
 import { ArrowLeftOutlined, MenuOutlined } from '@ant-design/icons';
+import { withRouter, RouteComponentProps } from 'react-router-dom';
 import MobileNavigation from '../../../components/UI/TabBar/MobileNavigation/MobileNavigation';
 
 import styles from './BaseLayout.module.scss';
 
 const { Header, Content } = Layout;
 
-interface Props {
+interface Props extends RouteComponentProps<any> {
   hasHeaderBackIcon?: boolean;
   hasHeaderMenuIcon?: boolean;
   headerText?: string;
@@ -41,9 +42,9 @@ const BaseLayout = (props: Props) => {
       </Layout>
       <div className={styles.mobile_navigation}>
         <MobileNavigation
-          isHomeSelected={true}
-          isNewSelected={false}
-          isBookingsSelected={false}
+          onHomeClick={() => props.history.push('/')}
+          onNewClick={() => props.history.push('/')}
+          onBookingsClick={() => props.history.push('/')}
         />
       </div>
     </>
@@ -52,4 +53,4 @@ const BaseLayout = (props: Props) => {
   return content;
 };
 
-export default BaseLayout;
+export default withRouter(BaseLayout);
