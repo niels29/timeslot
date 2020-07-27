@@ -1,0 +1,73 @@
+.date_picker {
+  width: 100%;
+  margin-bottom: 16px;
+  background-color: #e0e0e0;
+  border-radius: 12px;
+  height: 48px;
+  border: none;
+  border-color: transparent;
+  outline: none;
+  box-shadow: none;
+  & > div > input,
+  & > div > input::placeholder {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+    color: #171d33;
+    opacity: 1;
+    line-height: 48px;
+  }
+  :global(.ant-picker-clear) {
+    background-color: #e0e0e0;
+  }
+  svg {
+    color: #171d33;
+  }
+}
+
+.input {
+  width: 100%;
+  margin-bottom: 16px;
+  background-color: #e0e0e0;
+  border-radius: 12px;
+  height: 48px;
+  border: none;
+  border-color: transparent;
+  outline: none;
+  box-shadow: none;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.2px;
+  color: #171d33;
+  opacity: 1;
+  line-height: 48px;
+  &::placeholder {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+    color: #171d33;
+    opacity: 1;
+    line-height: 48px;
+  }
+  & > input,
+  & > input::placeholder {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+    color: #171d33;
+    opacity: 1;
+    line-height: 48px;
+    background-color: #e0e0e0;
+  }
+  svg {
+    color: #171d33;
+  }
+}

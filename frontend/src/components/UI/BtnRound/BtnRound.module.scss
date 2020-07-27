@@ -11,3 +11,16 @@
   letter-spacing: 0.02em;
   color: #ffffff;
 }
+
+.small {
+  width: 95px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  font-feature-settings: 'pnum' on, 'onum' on;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
