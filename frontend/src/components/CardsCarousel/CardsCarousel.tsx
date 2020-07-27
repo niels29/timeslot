@@ -1,11 +1,24 @@
 import React from 'react';
 import CarouselCard from '../CarouselCard/CarouselCard';
-import styles from './CardsCarousel.module.scss';
+// import styles from './CardsCarousel.module.scss';
 
-const CardsCarousel = (props: any) => {
+interface Props {
+  data: ICardData;
+}
+
+export interface ICardData {
+  mainBtnLink: string;
+  mainBtnText: string;
+  headline: string;
+  subheadline: string;
+  label: string;
+  imgUrl: string;
+}
+
+const CardsCarousel = (props: Props) => {
   let content = (
     <div>
-      <CarouselCard></CarouselCard>
+      <CarouselCard cardData={props.data}></CarouselCard>
     </div>
   );
 

@@ -9,6 +9,7 @@ import styles from './BaseLayout.module.scss';
 const { Header, Content } = Layout;
 
 interface Props extends RouteComponentProps<any> {
+  withoutNavigation?: boolean;
   hasHeaderBackIcon?: boolean;
   hasHeaderMenuIcon?: boolean;
   headerText?: string;
@@ -17,11 +18,36 @@ interface Props extends RouteComponentProps<any> {
 
 const BaseLayout = (props: Props) => {
   let headerIcon = null;
+  let mobileNavigation = null;
+  let postFix = null;
   if (props.hasHeaderBackIcon)
-    headerIcon = <ArrowLeftOutlined className={styles.header_icon} />;
+    headerIcon = (
+      <ArrowLeftOutlined
+        onClick={() => props.history.goBack()}
+        className={styles.header_icon}
+      />
+    );
   else if (props.hasHeaderMenuIcon)
     headerIcon = <MenuOutlined className={styles.header_icon} />;
 
+  if (!props.withoutNavigation) {
+    mobileNavigation = (
+      <div className={styles.mobile_navigation}>
+        <MobileNavigation
+          onHomeClick={() => props.history.push('/')}
+          onNewClick={() => props.history.push('/')}
+          onBookingsClick={() => props.history.push('/')}
+        />
+      </div>
+    );
+
+    postFix = (
+      <div
+        style={{
+          height: '56px',
+        }}></div>
+    );
+  }
   let content = (
     <>
       <Layout>
@@ -35,18 +61,9 @@ const BaseLayout = (props: Props) => {
         </Header>
         <div style={{ height: '56px' }}></div>
         <Content className={styles.content}>{props.children}</Content>
-        <div
-          style={{
-            height: '56px',
-          }}></div>
+        {postFix}
       </Layout>
-      <div className={styles.mobile_navigation}>
-        <MobileNavigation
-          onHomeClick={() => props.history.push('/')}
-          onNewClick={() => props.history.push('/')}
-          onBookingsClick={() => props.history.push('/')}
-        />
-      </div>
+      {mobileNavigation}
     </>
   );
 
