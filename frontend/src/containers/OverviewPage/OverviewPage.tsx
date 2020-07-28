@@ -7,7 +7,10 @@ import styles from './OverviewPage.module.scss';
 
 const OverviewPage: React.FC = () => {
   let content = (
-    <BaseLayout hasHeaderMenuIcon={true} headerText={'timeslot'}>
+    <BaseLayout
+      startSelection={[true, false, false]}
+      hasHeaderMenuIcon={true}
+      headerText={'timeslot'}>
       <div className={styles.search}>
         <Search />
       </div>

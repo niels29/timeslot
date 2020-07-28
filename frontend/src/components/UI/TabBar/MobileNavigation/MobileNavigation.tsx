@@ -15,13 +15,16 @@ interface Props {
   onHomeClick: () => void;
   onNewClick: () => void;
   onBookingsClick: () => void;
+  startSelection: [boolean, boolean, boolean];
   children?: React.ReactNode;
 }
 
 const MobileNavigation = (props: Props) => {
-  const [isHomeSelected, setIsHomeSelected] = useState(true);
-  const [isNewSelected, setIsNewSelected] = useState(false);
-  const [isBookingsSelected, setIsBookingsSelected] = useState(false);
+  const [isHomeSelected, setIsHomeSelected] = useState(props.startSelection[0]);
+  const [isNewSelected, setIsNewSelected] = useState(props.startSelection[1]);
+  const [isBookingsSelected, setIsBookingsSelected] = useState(
+    props.startSelection[2]
+  );
 
   const content = (
     <TabBar unselectedTintColor="#000" tintColor="#000" barTintColor="white">

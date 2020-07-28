@@ -9,6 +9,7 @@ import styles from './BaseLayout.module.scss';
 const { Header, Content } = Layout;
 
 interface Props extends RouteComponentProps<any> {
+  startSelection?: [boolean, boolean, boolean];
   withoutNavigation?: boolean;
   hasHeaderBackIcon?: boolean;
   hasHeaderMenuIcon?: boolean;
@@ -34,9 +35,12 @@ const BaseLayout = (props: Props) => {
     mobileNavigation = (
       <div className={styles.mobile_navigation}>
         <MobileNavigation
+          startSelection={
+            props.startSelection ? props.startSelection : [false, false, false]
+          }
           onHomeClick={() => props.history.push('/')}
           onNewClick={() => props.history.push('/')}
-          onBookingsClick={() => props.history.push('/')}
+          onBookingsClick={() => props.history.push('/bookings')}
         />
       </div>
     );

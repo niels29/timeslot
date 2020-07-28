@@ -4,6 +4,7 @@ import OverviewPage from './containers/OverviewPage/OverviewPage';
 import SearchResultsPage from './containers/SearchResultsPage/SearchResultsPage';
 import DetailPage from './containers/DetailPage/DetailPage';
 import BookingPage from './containers/BookingPage/BookingPage';
+import BookingsPage from './containers/BookingsPage/BookingsPage';
 
 const App = () => {
   let content = (
@@ -17,6 +18,9 @@ const App = () => {
         </Route>
         <Route path="/booking/:name">
           <BookingPage />
+        </Route>
+        <Route path="/bookings">
+          <BookingsPage />
         </Route>
         <Route path="/">
           <OverviewPage />
