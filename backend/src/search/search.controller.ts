@@ -9,13 +9,13 @@ import {
 export class SearchController {
   @Post()
   filterAll(@Body() value: ISearchPostValue): ISearchValue[] {
-    return [{ id: 'abc123', value: 'Long Beach' }];
+    return [{ value: 'Long Beach' }];
   }
-  @Get(':id')
+  @Get(':value')
   findAllResults(@Param() params): ISearchResult[] {
     return [
       {
-        id: params.id,
+        id: 'abc123',
         mainBtnLink: '/detail/Long Beach',
         mainBtnText: 'View',
         headline: 'Long Beach',

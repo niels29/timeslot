@@ -1,5 +1,4 @@
 export interface ISearchValue {
-  id: string;
   value: string;
 }
 export interface ISearchPostValue {
