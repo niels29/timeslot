@@ -1,0 +1,10 @@
+.spinner_row {
+  height: 100vh;
+}
+:global(.ant-spin) {
+  color: #69d2b3;
+
+  :global(.ant-spin-dot-item) {
+    background-color: #69d2b3;
+  }
+}
