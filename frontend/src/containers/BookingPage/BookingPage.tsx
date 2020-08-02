@@ -44,6 +44,8 @@ const BookingPage: React.FC<Props> = (props) => {
       <DatePicker className={styles.date_picker} />
       {timeSelection}
       <Input placeholder={'Favorite color'} className={styles.input} />
+      <Input placeholder={'Height'} className={styles.input} />
+      <Input placeholder={'Size'} className={styles.input} />
       <Input placeholder={'Name'} className={styles.input} />
       <Input
         placeholder={'Email'}

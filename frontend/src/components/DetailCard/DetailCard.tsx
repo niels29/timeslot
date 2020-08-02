@@ -17,6 +17,7 @@ export interface IDetailCardData {
   label: string;
   imgUrl: string;
   text: string;
+  openingHours: string;
   textHeadline: string;
 }
 
@@ -32,6 +33,8 @@ const DetailCard = (props: Props) => {
       <div className={styles.detail_info}>
         <p className={styles.text_headline}>{props.cardData.textHeadline}</p>
         <p className={styles.text}>{props.cardData.text}</p>
+        <p className={styles.text_headline}>Opening Times:</p>
+        <p className={styles.text}>{props.cardData.openingHours}</p>
         <BtnRound
           onClickCallback={() =>
             props.history.push(props.cardData.mainBtnLink)

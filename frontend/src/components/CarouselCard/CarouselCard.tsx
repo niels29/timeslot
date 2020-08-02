@@ -13,7 +13,9 @@ const CarouselCard = (props: Props) => {
   let content = (
     <div className={`${styles.card}`}>
       <span className={styles.label}>{props.cardData.label}</span>
-      <div className={styles.img_container}></div>
+      <div
+        className={styles.img_container}
+        style={{ backgroundImage: `url(${props.cardData.imgUrl})` }}></div>
       <h1 className={styles.main_heading}>{props.cardData.headline}</h1>
       <h2 className={styles.sub_heading}>{props.cardData.subheadline}</h2>
       <BtnRound
